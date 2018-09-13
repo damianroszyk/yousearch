@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-card-content>
+    <app-search (search)="fetchVideos(true)"></app-search>
+
+    <mat-divider></mat-divider>
+
+    <app-filters (filter)="fetchVideos(true)"></app-filters>
+
+    <mat-divider></mat-divider>
+
+    <app-list (toggleFav)="toggleFavorite($event)" (fetch)="fetchVideos()" [list]="list$ | async" [loading]="isLoading$ | async"></app-list>
+  </mat-card-content>
+</mat-card>

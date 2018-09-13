@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  ytUrl: 'https://www.googleapis.com/youtube/v3',
+  apiKey: 'AIzaSyBF0Pq3AQelZCe5ZDvtoz7sB9LxEn0lj_E'
 };
 
 /*

@@ -1,0 +1,29 @@
+<div class="container">
+  <div infiniteScroll [infiniteScrollDistance]="0.1" [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
+    <mat-list>
+      <mat-list-item *ngFor="let item of list">
+        <img (click)="watch(item.id)" matListAvatar [src]="item.snippet.thumbnails.default.url">
+        <h3 (click)="watch(item.id)" matLine> {{item.snippet.title}} </h3>
+        <p matLine>
+          {{item.snippet.publishedAt | date}}
+        </p>
+        <p matLine>
+          {{item.snippet.description}}
+        </p>
+
+        <mat-divider></mat-divider>
+
+        <div class="favorite" (click)="toggleFavorite(item.id)">
+          <mat-icon>{{ item.snippet.favorite ? 'star' : 'star_border'}}</mat-icon>
+        </div>
+      </mat-list-item>
+    </mat-list>
+
+  </div>
+  <div *ngIf="loading">
+    Fetching list...
+  </div>
+  <div class="centered" *ngIf="!loading && !list.length">
+    Please refine your search criteria
+  </div>
+</div>

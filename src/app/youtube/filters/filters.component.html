@@ -1,0 +1,29 @@
+<form [formGroup]="filtersForm">
+  <mat-form-field>
+    <mat-select formControlName="maxResults" placeholder="Results per page">
+      <mat-option [value]="10">
+        10
+      </mat-option>
+      <mat-option [value]="15">
+        15
+      </mat-option>
+      <mat-option [value]="20">
+        20
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select formControlName="order" placeholder="Order by">
+      <mat-option [value]="'title'">
+        Title
+      </mat-option>
+      <mat-option [value]="'relevance'">
+        Relevance
+      </mat-option>
+      <mat-option [value]="'date'">
+        Date
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>

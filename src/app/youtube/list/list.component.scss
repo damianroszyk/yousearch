@@ -1,0 +1,20 @@
+:host {
+  .favorite {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+  }
+
+  .centered {
+    text-align: center;
+  }
+
+  ::ng-deep{
+    .mat-list-avatar,
+    .mat-list-item-content h3 {
+      cursor: pointer;
+    }
+  }
+}
